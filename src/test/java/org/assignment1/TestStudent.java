@@ -1,5 +1,7 @@
-package assignment1;
+package org.assignment1;
 
+import org.assignment1.Lecturer;
+import org.assignment1.Student;
 import org.junit.jupiter.api.Test;
 
 import static org.junit.jupiter.api.Assertions.assertEquals;

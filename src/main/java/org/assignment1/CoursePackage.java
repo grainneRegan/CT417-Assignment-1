@@ -1,4 +1,4 @@
-package assignment1;
+package org.assignment1;
 
 import org.joda.time.DateTime;
 
