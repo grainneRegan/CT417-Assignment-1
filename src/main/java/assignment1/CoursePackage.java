@@ -2,29 +2,31 @@ package assignment1;
 
 import org.joda.time.DateTime;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class CoursePackage {
     private String courseName;
-    private List studentsEnrolled;
-    private List requiredModules;
+    private ArrayList studentsEnrolled;
+    private ArrayList requiredModules;
     private DateTime startDate;
     private DateTime endDate;
 
     Module module;
 
-    public CoursePackage(String courseName, List studentsEnrolled, List<Module> requiredModules, DateTime startDate, DateTime endDate) {
+    public CoursePackage(String courseName, DateTime startDate, DateTime endDate) {
         this.courseName = courseName;
-        this.studentsEnrolled = studentsEnrolled;
-        this.requiredModules = requiredModules;
         this.startDate = startDate;
         this.endDate = endDate;
+        ArrayList requiredModules = new ArrayList<Module>();
+        ArrayList studentsEnrolled = new ArrayList<Student>();
     }
 
+    //add additional module to course
     public void addModuleToCourse(Module module){
         requiredModules.add(module);
     }
 
+    //adds student to each module required by the course they are joining
     public void addStudentsToCourse(Student student){
         studentsEnrolled.add(student);
         for(Module module:getRequiredModules()){
@@ -40,19 +42,19 @@ public class CoursePackage {
         this.courseName = courseName;
     }
 
-    public List getStudentsEnrolled() {
+    public ArrayList getStudentsEnrolled() {
         return studentsEnrolled;
     }
 
-    public void setStudentsEnrolled(List studentsEnrolled) {
+    public void setStudentsEnrolled(ArrayList studentsEnrolled) {
         this.studentsEnrolled = studentsEnrolled;
     }
 
-    public List<Module> getRequiredModules() {
+    public ArrayList<Module> getRequiredModules() {
         return requiredModules;
     }
 
-    public void setRequiredModules(List requiredModules) {
+    public void setRequiredModules(ArrayList requiredModules) {
         this.requiredModules = requiredModules;
     }
 

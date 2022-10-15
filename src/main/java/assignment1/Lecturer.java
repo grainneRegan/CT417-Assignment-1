@@ -1,35 +1,36 @@
 package assignment1;
 
-import java.time.LocalDate;
-import java.util.List;
+import java.util.ArrayList;
 
 public class Lecturer {
     private String name;
     private int age;
-    private LocalDate dateOfBirth;
+    private String dateOfBirth;
     private int id;
     private String lecturerUserName;
-    private List modulesTeaching;
+    private ArrayList modulesTeaching;
 
-    public Lecturer(String name, int age, LocalDate dateOfBirth, int id, List modulesTeaching) {
+    public Lecturer(String name, int age, String dateOfBirth, int id) {
         this.name = name;
         this.age = age;
         this.dateOfBirth = dateOfBirth;
         this.id = id;
-        this.modulesTeaching = modulesTeaching;
+        //an empty arrayList is created in constructor instead of passing in list of modules
+        ArrayList modulesTeaching = new ArrayList<Module>();
         createLecturerUserName(name, age);
     }
-
-    private void createLecturerUserName(String name, int age){
-        this.lecturerUserName = name + age;
+    //creates a username for lecturer and is called in constructor
+    public String createLecturerUserName(String name, int age){
+        return this.lecturerUserName = name + age;
     }
 
+    //allows module to be added to list of modules taught by lecturer
     public void addModule(Module module){
-        modulesTeaching.add(module);
+        this.modulesTeaching.add(module);
     }
 
     public String getLecturerUserName(String name, int age) {
-        return name + age;
+        return lecturerUserName;
     }
 
     public void setLecturerUserName(String userName) {
@@ -52,11 +53,11 @@ public class Lecturer {
         this.age = age;
     }
 
-    public LocalDate getDateOfBirth() {
+    public String getDateOfBirth() {
         return dateOfBirth;
     }
 
-    public void setDateOfBirth(LocalDate dateOfBirth) {
+    public void setDateOfBirth(String dateOfBirth) {
         this.dateOfBirth = dateOfBirth;
     }
 
@@ -68,11 +69,11 @@ public class Lecturer {
         this.id = id;
     }
 
-    public List getModulesTeaching() {
+    public ArrayList getModulesTeaching() {
         return modulesTeaching;
     }
 
-    public void setModulesTeaching(List modulesTeaching) {
+    public void setModulesTeaching(ArrayList modulesTeaching) {
         this.modulesTeaching = modulesTeaching;
     }
 }

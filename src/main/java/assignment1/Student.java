@@ -1,6 +1,6 @@
 package assignment1;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Student {
     private String name;
@@ -8,8 +8,8 @@ public class Student {
     private String dateOfBirth;
     private int id;
     private String studentUserName;
-    private List courses;
-    private List modules;
+    private ArrayList courses;
+    private ArrayList modules;
 
     CoursePackage coursePackage;
 
@@ -18,26 +18,32 @@ public class Student {
         this.age = age;
         this.dateOfBirth = dateOfBirth;
         this.id = id;
+        courses = new ArrayList<CoursePackage>();
+        modules = new ArrayList<Module>();
         createStudentUserName(name, age);
     }
 
-    public List getModulesTakenByStudent(List<CoursePackage> courses){
-        for(CoursePackage course:courses){
-            modules.add(course.getRequiredModules());
-        }
-        return this.modules;
-    }
-
+    //adds a module to the list of modules taken by a student
     public void addModule(Module module){
         modules.add(module);
     }
 
+    //adds course to list of courses taken by student
     public void addCourse(CoursePackage course){
         courses.add(course);
     }
 
+    //removes any course that the student no longer takes and also any associated course
     public void removeCourse(CoursePackage course){
+        for(Module module:course.getRequiredModules()){
+            modules.remove(module);
+        }
         courses.remove(course);
+    }
+
+    //removes any module that the student no longer takes
+    public void removeModule(Module module){
+        modules.remove(module);
     }
     public String createStudentUserName(String name, int age){
         return this.studentUserName = name + age;
@@ -67,11 +73,11 @@ public class Student {
         return id;
     }
 
-    public List getCourses() {
+    public ArrayList getCourses() {
         return courses;
     }
 
-    public List getModules() {
+    public ArrayList getModules() {
         return modules;
     }
 
@@ -91,11 +97,11 @@ public class Student {
         this.id = id;
     }
 
-    public void setCourses(List courses) {
+    public void setCourses(ArrayList courses) {
         this.courses = courses;
     }
 
-    public void setModules(List modules) {
+    public void setModules(ArrayList modules) {
         this.modules = modules;
     }
 }

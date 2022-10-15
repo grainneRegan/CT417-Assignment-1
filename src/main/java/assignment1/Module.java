@@ -1,24 +1,24 @@
 package assignment1;
 
-import java.util.List;
+import java.util.ArrayList;
 
 public class Module {
     private String moduleName;
     private int id;
-    private List listOfStudents;
-    private List associatedCourses;
+    private ArrayList ArrayListOfStudents;
+    private ArrayList associatedCourses;
     private String lecturerResponsible;
 
-    public Module(String moduleName, int id, List listOfStudents, List associatedCourses, String lecturerResponsible) {
+    public Module(String moduleName, int id, String lecturerResponsible) {
         this.moduleName = moduleName;
         this.id = id;
-        this.listOfStudents = listOfStudents;
-        this.associatedCourses = associatedCourses;
+        ArrayList students = new ArrayList<Student>();
         this.lecturerResponsible = lecturerResponsible;
     }
 
+    //add student to list of students taking a module
     public void addStudent(Student student){
-        listOfStudents.add(student);
+        ArrayListOfStudents.add(student);
     }
 
     public String getModuleName() {
@@ -37,19 +37,19 @@ public class Module {
         this.id = id;
     }
 
-    public List getListOfStudents() {
-        return listOfStudents;
+    public ArrayList getArrayListOfStudents() {
+        return ArrayListOfStudents;
     }
 
-    public void setListOfStudents(List listOfStudents) {
-        this.listOfStudents = listOfStudents;
+    public void setArrayListOfStudents(ArrayList ArrayListOfStudents) {
+        this.ArrayListOfStudents = ArrayListOfStudents;
     }
 
-    public List getAssociatedCourses() {
+    public ArrayList getAssociatedCourses() {
         return associatedCourses;
     }
 
-    public void setAssociatedCourses(List associatedCourses) {
+    public void setAssociatedCourses(ArrayList associatedCourses) {
         this.associatedCourses = associatedCourses;
     }
 
