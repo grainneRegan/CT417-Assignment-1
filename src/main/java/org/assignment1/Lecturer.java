@@ -16,7 +16,7 @@ public class Lecturer {
         this.dateOfBirth = dateOfBirth;
         this.id = id;
         //an empty arrayList is created in constructor instead of passing in list of modules
-        ArrayList modulesTeaching = new ArrayList<Module>();
+        modulesTeaching = new ArrayList<Module>();
         createLecturerUserName(name, age);
     }
     //creates a username for lecturer and is called in constructor

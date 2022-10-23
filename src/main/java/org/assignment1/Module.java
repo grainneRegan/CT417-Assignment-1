@@ -5,20 +5,21 @@ import java.util.ArrayList;
 public class Module {
     private String moduleName;
     private String id;
-    private ArrayList ArrayListOfStudents;
+    private ArrayList students;
     private ArrayList associatedCourses;
     private Lecturer lecturerResponsible;
 
     public Module(String moduleName, String id, Lecturer lecturerResponsible) {
         this.moduleName = moduleName;
         this.id = id;
-        ArrayList students = new ArrayList<Student>();
+        students = new ArrayList<Student>();
+        associatedCourses = new ArrayList<CoursePackage>();
         this.lecturerResponsible = lecturerResponsible;
     }
 
     //add student to list of students taking a module
     public void addStudent(Student student){
-        ArrayListOfStudents.add(student);
+        students.add(student);
     }
 
     public String getModuleName() {
@@ -38,11 +39,11 @@ public class Module {
     }
 
     public ArrayList getArrayListOfStudents() {
-        return ArrayListOfStudents;
+        return students;
     }
 
     public void setArrayListOfStudents(ArrayList ArrayListOfStudents) {
-        this.ArrayListOfStudents = ArrayListOfStudents;
+        this.students = ArrayListOfStudents;
     }
 
     public ArrayList getAssociatedCourses() {

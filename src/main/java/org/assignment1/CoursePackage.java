@@ -17,8 +17,8 @@ public class CoursePackage {
         this.courseName = courseName;
         this.startDate = startDate;
         this.endDate = endDate;
-        ArrayList requiredModules = new ArrayList<Module>();
-        ArrayList studentsEnrolled = new ArrayList<Student>();
+        requiredModules = new ArrayList<Module>();
+        studentsEnrolled = new ArrayList<Student>();
     }
 
     //add additional module to course
