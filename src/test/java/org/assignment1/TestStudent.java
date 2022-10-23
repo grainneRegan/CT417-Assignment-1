@@ -18,6 +18,6 @@ public class TestStudent {
 
     @Test
     public void testCreateLecturerUserName(){
-        assertEquals("John23", lecturer1.createLecturerUserName("Luke", 19));
+        assertEquals("John23", lecturer1.createLecturerUserName("John", 23));
     }
 }
