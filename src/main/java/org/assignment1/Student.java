@@ -73,11 +73,11 @@ public class Student {
         return id;
     }
 
-    public ArrayList getCourses() {
+    public ArrayList<CoursePackage> getCourses() {
         return courses;
     }
 
-    public ArrayList getModules() {
+    public ArrayList<Module> getModules() {
         return modules;
     }
 

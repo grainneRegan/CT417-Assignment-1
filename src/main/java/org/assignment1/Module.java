@@ -38,7 +38,7 @@ public class Module {
         this.id = id;
     }
 
-    public ArrayList getArrayListOfStudents() {
+    public ArrayList<Student> getArrayListOfStudents() {
         return students;
     }
 
@@ -46,7 +46,7 @@ public class Module {
         this.students = ArrayListOfStudents;
     }
 
-    public ArrayList getAssociatedCourses() {
+    public ArrayList<CoursePackage> getAssociatedCourses() {
         return associatedCourses;
     }
 
