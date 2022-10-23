@@ -4,12 +4,12 @@ import java.util.ArrayList;
 
 public class Module {
     private String moduleName;
-    private int id;
+    private String id;
     private ArrayList ArrayListOfStudents;
     private ArrayList associatedCourses;
-    private String lecturerResponsible;
+    private Lecturer lecturerResponsible;
 
-    public Module(String moduleName, int id, String lecturerResponsible) {
+    public Module(String moduleName, String id, Lecturer lecturerResponsible) {
         this.moduleName = moduleName;
         this.id = id;
         ArrayList students = new ArrayList<Student>();
@@ -29,11 +29,11 @@ public class Module {
         this.moduleName = moduleName;
     }
 
-    public int getId() {
+    public String getId() {
         return id;
     }
 
-    public void setId(int id) {
+    public void setId(String id) {
         this.id = id;
     }
 
@@ -53,11 +53,11 @@ public class Module {
         this.associatedCourses = associatedCourses;
     }
 
-    public String getLecturerResponsible() {
+    public Lecturer getLecturerResponsible() {
         return lecturerResponsible;
     }
 
-    public void setLecturerResponsible(String lecturerResponsible) {
+    public void setLecturerResponsible(Lecturer lecturerResponsible) {
         this.lecturerResponsible = lecturerResponsible;
     }
 }
