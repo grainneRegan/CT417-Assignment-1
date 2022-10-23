@@ -42,7 +42,7 @@ public class CoursePackage {
         this.courseName = courseName;
     }
 
-    public ArrayList getStudentsEnrolled() {
+    public ArrayList<Student> getStudentsEnrolled() {
         return studentsEnrolled;
     }
 
